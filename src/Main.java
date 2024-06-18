@@ -28,7 +28,7 @@ public class Main {
 
             // lê o número informado pelo usuário, verifica erros e define o caso de conversão de moeda
             try {
-                int opcao = scanner.nextInt();
+                int opcao = Integer.valueOf(scanner.nextLine());
                 switch (opcao) {
                     case 1:
                         moedasConvertidas = "USD/ARS/";
@@ -65,7 +65,7 @@ public class Main {
                 // Caso a flag runtime esteja ativa, pede o valor para converter, trata caso ocorra erros, e devolve o valor convertido
                 if (runtime) {
                     System.out.println("Por favor, informe o valor que deseja converter:");
-                    double valor = scanner.nextDouble();
+                    double valor = Double.valueOf(scanner.nextLine());
                     System.out.println("O valor convertido é: " + leitorApi.callLeitorApi(moedasConvertidas, valor));
                 }
             } catch (InputMismatchException e) {
